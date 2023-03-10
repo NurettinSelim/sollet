@@ -38,7 +38,9 @@ dependencies:
   phantom_connect: ^0.0.8
   cryptography: '2.1.0'
   provider: ^6.0.5
-  solana_wallet_adapter: ^0.0.4
+  solana_wallet_adapter: ^0.0.5
+  go_router: ^6.2.0
+  solana_common: ^0.0.4+1
   
 dev_dependencies:
   flutter_test:

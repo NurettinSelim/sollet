@@ -5,7 +5,10 @@ import 'package:solana_common/config/cluster.dart';
 // Singleton version of [SolanaWalletAdapter]
 class WalletAdapter extends SolanaWalletAdapter {
   static final WalletAdapter _instance = WalletAdapter._internal(
-    AppIdentity(uri: Uri.tryParse(AppConfig.appUri)),
+    AppIdentity(
+      uri: Uri.tryParse(AppConfig.appUri),
+      name: AppConfig.appName,
+    ),
     cluster: Cluster.devnet,
   );
 

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sollet/core/router.dart';
+import 'package:sollet/core/utils/theme_helper.dart';
 import 'package:sollet/models/wallet_provider.dart';
-import 'package:sollet/pages/wallet_connect_page.dart';
 
 void main() {
   // SolanaWalletAdapter(const AppIdentity());
+
   runApp(
     MultiProvider(
       providers: [
@@ -20,10 +22,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: WalletConnectPage(),
-      ),
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      title: 'Patika.dev App',
+      theme: ThemeHelper.themeData,
+      routerDelegate: router.routerDelegate,
+      routeInformationParser: router.routeInformationParser,
+      routeInformationProvider: router.routeInformationProvider,
     );
   }
 }
