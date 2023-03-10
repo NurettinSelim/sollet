@@ -6,8 +6,9 @@ import 'package:solana_common/config/cluster.dart';
 class WalletAdapter extends SolanaWalletAdapter {
   static final WalletAdapter _instance = WalletAdapter._internal(
     AppIdentity(
-      uri: Uri.tryParse(AppConfig.appUri),
+      uri: Uri.tryParse(AppConfig.appUrl),
       name: AppConfig.appName,
+      // icon: Uri.tryParse(AppConfig.iconUrl),
     ),
     cluster: Cluster.devnet,
   );

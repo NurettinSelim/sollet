@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
-  final bool? firstConnection;
-  const MainPage({super.key, this.firstConnection});
+  const MainPage({super.key});
 
   @override
   State<MainPage> createState() => _MainPageState();
@@ -12,19 +11,18 @@ class _MainPageState extends State<MainPage> {
   int currentPageIndex = 0;
   @override
   void initState() {
-    if (widget.firstConnection == true) {
-      const snackBar = SnackBar(
-        content: Text('Wallet connection successful'),
-      );
-      WidgetsBinding.instance.addPostFrameCallback(
-          (_) => ScaffoldMessenger.of(context).showSnackBar(snackBar));
-    }
+    // if (widget.firstConnection == true) {
+    //   const snackBar = SnackBar(
+    //     content: Text('Wallet connection successful'),
+    //   );
+    //   WidgetsBinding.instance.addPostFrameCallback(
+    //       (_) => ScaffoldMessenger.of(context).showSnackBar(snackBar));
+    // }
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    debugPrint(widget.firstConnection.toString());
     return Scaffold(
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
