@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sollet/tabs/explore_tab.dart';
+import 'package:sollet/tabs/home_tab.dart';
+import 'package:sollet/tabs/profile_tab.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -24,6 +27,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text("SolLet")),
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           setState(() {
@@ -51,22 +55,10 @@ class _MainPageState extends State<MainPage> {
       ),
       body: IndexedStack(
         index: currentPageIndex,
-        children: [
-          Container(
-            color: Colors.red,
-            alignment: Alignment.center,
-            child: const Text('Home Page'),
-          ),
-          Container(
-            color: Colors.green,
-            alignment: Alignment.center,
-            child: const Text('Explore Page'),
-          ),
-          Container(
-            color: Colors.blue,
-            alignment: Alignment.center,
-            child: const Text('Profile Page'),
-          ),
+        children: const [
+          HomeTab(),
+          ExploreTab(),
+          ProfileTab(),
         ],
       ),
     );

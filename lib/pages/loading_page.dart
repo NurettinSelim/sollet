@@ -31,7 +31,7 @@ class _LoadingPageState extends State<LoadingPage> {
               Padding(
                 padding: const EdgeInsets.only(top: 120),
                 child: Text(
-                  "Wallet connection is successful 🎉",
+                  "Wallet connection successful 🎉",
                   textAlign: TextAlign.center,
                   style: Theme.of(context)
                       .textTheme
