@@ -5,10 +5,17 @@ class HomeTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       child: Card(
-        child: Padding(
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          side: BorderSide(
+            color: Theme.of(context).colorScheme.outline,
+          ),
+          borderRadius: const BorderRadius.all(Radius.circular(12)),
+        ),
+        child: const Padding(
           padding: EdgeInsets.all(12),
           child: Text(
             "Currently you have 0 Newsletter \nYou can add newsletter via Explore tab :)",
