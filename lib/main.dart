@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sollet/core/router.dart';
 import 'package:sollet/core/utils/theme_helper.dart';
+import 'package:sollet/models/newsletter_model.dart';
 import 'package:sollet/models/wallet_provider.dart';
 
 void main() {
@@ -11,6 +12,7 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => WalletModel()),
+        ChangeNotifierProvider(create: (context) => NewsletterProvider()),
       ],
       child: const MyApp(),
     ),
